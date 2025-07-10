@@ -1,6 +1,7 @@
 {
-  "version": 2,
-  "name": "lizzie-buras-realtor",
+  "buildCommand": "echo 'Static site ready'",
+  "outputDirectory": ".",
+  "framework": null,
   "headers": [
     {
       "source": "/(.*)",

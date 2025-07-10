@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Lizzie Buras, REALTOR® | Gulf Coast Real Estate</title>
+    <meta name="description" content="Read Lizzie Buras' real estate blog for home buying tips, selling advice, and Houma market insights. Licensed REALTOR® with Gulf Coast Real Estate.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBeige: '#F5F5DC',
+                        brandBlue: '#6BA6D9',
+                        gulfCoastBlue: '#2B5A87'
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-4 bg-white shadow fixed w-full top-0 z-50">
+        <!-- Brand/name with proper attribution -->
+        <div class="flex items-center space-x-3">
+            <div>
+                <a href="index.html" class="text-xl font-bold text-gray-800">Lizzie Buras</a>
+                <div class="text-xs text-gray-600">Gulf Coast Real Estate</div>
+            </div>
+        </div>
+        
+        <!-- Menu (hidden on mobile) -->
+        <ul class="hidden sm:flex space-x-6 text-gray-800">
+            <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600 transition text-blue-600">Blog</a></li>
+            <li><a href="index.html#contact" class="hover:text-blue-600 transition">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile menu button -->
+        <button class="sm:hidden p-2" id="menuToggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        
+        <!-- Mobile menu (hidden by default) -->
+        <div class="hidden absolute top-16 left-0 right-0 bg-white shadow-lg sm:hidden" id="mobileMenu">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="index.html" class="block hover:text-blue-600 transition">Home</a></li>
+                <li><a href="blog.html" class="block hover:text-blue-600 transition text-blue-600">Blog</a></li>
+                <li><a href="index.html#contact" class="block hover:text-blue-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-blue-50 py-16 px-4 mt-16" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Real Estate Blog</h1>
+            <p class="text-lg text-gray-600 mb-2">Tips, insights, and market updates from your trusted Houma realtor</p>
+            <p class="text-sm text-gray-500">Lizzie Buras, REALTOR® | Gulf Coast Real Estate | Licensed in Louisiana</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-12 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Blog Post 1 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Home staging tips" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>March 15, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">How to Prepare Your Home for Sale</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Selling your home can be both exciting and stressful. In this comprehensive guide, we'll go over proven tips 
+                            to help you stage your home for potential buyers, increase your home's value, and sell faster in today's market.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="First time home buyer tips" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>March 8, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">First-Time Home Buyer's Guide to Houma</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Buying your first home is an exciting milestone, but it can also feel overwhelming. This guide will walk you 
+                            through the entire process, from getting pre-approved for a mortgage to closing on your dream home in Houma.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Houma real estate market" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>March 1, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">2025 Houma Real Estate Market Trends</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            What's happening in the Houma real estate market this year? Get insights on home prices, inventory levels, 
+                            and what buyers and sellers can expect in our local market throughout 2025.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Home inspection tips" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>February 22, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">Understanding Home Inspections: What to Expect</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Home inspections are a crucial part of the buying process. Learn what inspectors look for, how to prepare, 
+                            and what to do if issues are found during your Louisiana home inspection.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Houma neighborhoods" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>February 15, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">Best Neighborhoods in Houma for Families</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Choosing the right neighborhood is just as important as choosing the right home. Discover the best 
+                            family-friendly neighborhoods in Houma, from schools to amenities and everything in between.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article class="bg-white rounded-lg shadow hover:shadow-lg transition p-6 mb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Real estate investment" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>February 8, 2025</span>
+                            <span>•</span>
+                            <span>by Lizzie Buras, REALTOR®</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                            <a href="post.html" class="hover:text-blue-600 transition">Investment Properties in Houma: A Guide</a>
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Thinking about investing in real estate? Learn about the opportunities available in Houma, from rental 
+                            properties to fix-and-flip opportunities, and how to get started as a real estate investor.
+                        </p>
+                        <a href="post.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 bg-blue-50" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Make Your Move?</h2>
+            <p class="text-lg text-gray-600 mb-6">
+                Whether you're buying or selling, Lizzie is here to guide you through every step of the process.
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                <a href="index.html#contact" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+                    Get in Touch Today
+                </a>
+                <a href="https://lizzie.gulfcoast.homes/" target="_blank" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg border border-blue-600 hover:bg-blue-50 transition">
+                    Visit Team Website
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Compliance Footer -->
+    <section class="py-8 px-4 bg-gray-100 text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-sm text-gray-600 mb-2">
+                <strong>Lizzie Buras, REALTOR®</strong><br>
+                Gulf Coast Real Estate | Team Leader: Cade Harris<br>
+                420 Corporate Drive, Houma, LA 70360<br>
+                Licensed in the State of Louisiana, USA
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-100 p-6 text-center text-sm">
+        <p class="mb-2">
+            Cell: <a href="tel:985-860-3666" class="underline hover:text-blue-400">(985) 860-3666</a> | 
+            Office: <a href="tel:985-239-5374" class="underline hover:text-blue-400">(985) 239-5374</a> | 
+            <a href="mailto:Lizzie@gulfcoast-res.com" class="underline hover:text-blue-400">Lizzie@gulfcoast-res.com</a>
+        </p>
+        <p class="mb-2">
+            <a href="https://lizzie.gulfcoast.homes/" target="_blank" class="hover:text-blue-400">Team Website</a> | 
+            Follow on 
+            <a href="#" class="hover:text-blue-400">Facebook</a> | 
+            <a href="#" class="hover:text-blue-400">Instagram</a>
+        </p>
+        <p class="text-gray-400">© 2025 Lizzie Buras, REALTOR® | Gulf Coast Real Estate. Licensed in Louisiana.</p>
+    </footer>
+
+    <!-- AOS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html> 

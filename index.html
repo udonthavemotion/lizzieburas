@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizzie Buras, REALTOR® - Gulf Coast Real Estate | Houma, LA</title>
+    <meta name="description" content="Lizzie Buras, REALTOR® with Gulf Coast Real Estate. Licensed in Louisiana. Serving Houma, Terrebonne Parish, and surrounding areas. Professional real estate services.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBeige: '#F5F5DC',
+                        brandBlue: '#6BA6D9',
+                        gulfCoastBlue: '#2B5A87'
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-4 bg-white/95 backdrop-blur-sm shadow fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <!-- Brand/name with proper attribution -->
+        <div class="flex items-center space-x-3">
+            <div>
+                <a href="index.html" class="text-xl font-bold text-gray-800">Lizzie Buras</a>
+                <div class="text-xs text-gray-600">Gulf Coast Real Estate</div>
+            </div>
+        </div>
+        
+        <!-- Menu (hidden on mobile) -->
+        <ul class="hidden sm:flex space-x-6 text-gray-800">
+            <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600 transition">Blog</a></li>
+            <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile menu button -->
+        <button class="sm:hidden p-2" id="menuToggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        
+        <!-- Mobile menu (hidden by default) -->
+        <div class="hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg sm:hidden" id="mobileMenu">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#home" class="block hover:text-blue-600 transition">Home</a></li>
+                <li><a href="blog.html" class="block hover:text-blue-600 transition">Blog</a></li>
+                <li><a href="#contact" class="block hover:text-blue-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video -->
+        <video 
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            preload="metadata"
+            id="heroVideo">
+            <source src="videos/5469108-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            <!-- Fallback image for unsupported browsers -->
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Gulf Coast Real Estate - Lizzie Buras" class="w-full h-full object-cover">
+        </video>
+        
+        <!-- Gradient Overlay for better text readability -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 via-black/20 to-black/50 z-10"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center text-white px-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 drop-shadow-2xl leading-tight">
+                Lizzie Buras
+            </h1>
+            <div class="text-lg md:text-xl mb-2 font-semibold drop-shadow-lg">
+                REALTOR® | Gulf Coast Real Estate
+            </div>
+            <p class="text-xl md:text-2xl lg:text-3xl mb-8 italic drop-shadow-lg font-light">
+                Helping Houma Feel Like Home
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                    Contact Me Today
+                </a>
+                <a href="#about" class="inline-block bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20" data-aos="fade-up" data-aos-delay="1500">
+            <div class="animate-bounce">
+                <svg class="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Video controls for accessibility -->
+        <button id="videoToggle" class="absolute bottom-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300" title="Pause/Play video">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6l5-3-5-3z"></path>
+            </svg>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-white" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Meet Lizzie</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Lizzie Buras is a dedicated REALTOR® with Gulf Coast Real Estate, serving Houma and the surrounding Terrebonne Parish area. 
+                        As a lifelong Louisiana resident and devoted mother of two, she understands what makes our community special and is passionate about helping families 
+                        find their perfect home in South Louisiana.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Before real estate, Lizzie spent 8 years as a dental assistant, where she honed her skills in patient care, empathy, and honest communication. 
+                        This foundation of caring for people now defines her approach as a real estate professional – treating every client with the same dedication and attention she would want for her own family.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Whether you're buying your first home, upgrading to something bigger, or looking to sell, Lizzie provides 
+                        the knowledge, dedication, and caring service that makes all the difference. She's not just your realtor – 
+                        she's your neighbor, committed to helping you navigate one of life's most important decisions with genuine care and professional excellence.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                        <div class="text-sm font-semibold text-blue-800 mb-2">Professional Credentials</div>
+                        <div class="text-sm text-blue-700">
+                            Licensed in the State of Louisiana, USA<br>
+                            REALTOR® | Gulf Coast Real Estate<br>
+                            Team Leader: Cade Harris
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">Local</div>
+                            <div class="text-sm text-gray-600">Expert</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">Licensed</div>
+                            <div class="text-sm text-gray-600">Professional</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">100%</div>
+                            <div class="text-sm text-gray-600">Dedication</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="Lizzie Headshots/DSC_2761-Edit.JPEG" 
+                         alt="Lizzie Buras - Your trusted Houma REALTOR®" 
+                         class="w-full h-96 object-cover rounded-lg shadow-xl">
+                    <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg">
+                        <div class="text-lg font-semibold">Licensed REALTOR®</div>
+                        <div class="text-sm">Houma, Louisiana</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting to Know Lizzie - Storytelling Section -->
+    <section class="overflow-hidden">
+        
+        <!-- Hero Banner with Personal Imagery -->
+        <div class="relative h-96 bg-cover bg-center bg-fixed" style="background-image: url('Family/main.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Lizzie</h2>
+                    <p class="text-xl md:text-2xl italic">Bringing Southern hospitality and professional savvy to help you find home</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roots in the Bayou Section -->
+        <div class="relative">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 py-20 px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1" data-aos="fade-right">
+                            <div class="bg-white rounded-xl shadow-xl p-8 relative -mt-16 lg:mt-0">
+                                <h3 class="text-3xl font-bold text-gray-800 mb-6">Roots in the Bayou</h3>
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    In Houma's close-knit culture, it's rare to find a stranger – folks smile and greet you on the street, and families here bond deeply. I strive to embody that same Cajun-country warmth in my work, making every client feel welcome and every house feel like home.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed">
+                                    Louisiana has always been home for me, and my love for the Houma community runs as deep as a bayou. Neighbors looking out for neighbors, Friday night football games, church potlucks – this is the life I cherish, and I bring that spirit of caring into real estate.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2" data-aos="fade-left">
+                            <div class="relative group">
+                                <img src="Family/482031028_663367809483004_6622764616879901187_n.jpg" 
+                                     alt="Lizzie's Louisiana roots and community connections" 
+                                     class="w-full h-96 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <p class="text-lg font-semibold">Louisiana Born & Raised</p>
+                                    <p class="text-sm opacity-90">Where community is everything</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family & Values Section -->
+        <div class="relative bg-white py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Family & Values</h3>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        My family-first mindset guides everything I do, and my clients often become friends – more like extended family
+                    </p>
+                </div>
+                
+                <!-- Family Photo Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="relative group" data-aos="fade-up">
+                        <img src="Family/ellie.jpg" 
+                             alt="Lizzie with her daughter Ellie" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-lg font-semibold">My Daughter Ellie</p>
+                            <p class="text-sm opacity-90">Teaching her the value of home</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="Family/zay.jpg" 
+                             alt="Lizzie with her son Zay" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-lg font-semibold">My Son Zay</p>
+                            <p class="text-sm opacity-90">Family adventures and memories</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="200">
+                        <img src="Family/491657950_4118469348476839_2928790232191004996_n.jpg" 
+                             alt="Family celebrations and togetherness" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-lg font-semibold">Family Celebrations</p>
+                            <p class="text-sm opacity-90">Creating lasting memories</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Family Values Text -->
+                <div class="max-w-4xl mx-auto bg-blue-50 rounded-xl p-8" data-aos="fade-up">
+                    <p class="text-gray-700 leading-relaxed text-lg mb-6">
+                        I'm a devoted fiancé and mother of two, and that family-first mindset guides everything I do. My clients often become friends (more like extended family), because I treat your home journey as I would my own: with genuine care, patience, and a whole lot of heart.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        I understand that families aren't just buying square footage; they're investing in the feeling of home and a lifestyle. When you work with me, you're not just getting a realtor – you're getting someone who truly understands what it means to create a home where memories are made.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Passion Section -->
+        <div class="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1" data-aos="fade-right">
+                        <div class="relative group">
+                            <img src="Family/482349180_663367849483000_6375781129234543585_n.jpg" 
+                                 alt="Lizzie's professional journey and client dedication" 
+                                 class="w-full h-96 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-lg font-semibold">Professional Excellence</p>
+                                <p class="text-sm opacity-90">8 years of caring for people</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2" data-aos="fade-left">
+                        <div class="bg-white rounded-xl shadow-xl p-8">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6">Professional Passion</h3>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Before real estate, I spent 8 years as a dental assistant, nurturing smiles and listening to peoples' needs. That experience taught me the power of patience, empathy, and honest communication – skills that now define my approach as a real estate professional.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                When I switched careers to become a REALTOR®, I brought along that same passion for helping people, vowing to guide every client with the care they deserve. Don't let my friendly smile fool you – I take my responsibilities as your agent very seriously.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                I believe in being completely honest with my clients and strive to make each transaction as smooth and successful as possible. "Good enough" is never good enough; I'm committed to excellence in everything I do.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Mission Statement -->
+        <div class="relative bg-white py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-12">
+                    <blockquote class="text-2xl italic text-gray-700 mb-6 leading-relaxed">
+                        "At the end of the day, I measure success not by the number of houses sold, but by the trust I build and the smiles I see when I've helped a family find not just a house, but a home."
+                    </blockquote>
+                    <p class="text-gray-600 font-semibold text-lg">— Lizzie Buras, REALTOR®</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div class="relative h-64 bg-cover bg-center bg-fixed" style="background-image: url('Family/main2.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div class="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Next Chapter?</h3>
+                    <p class="text-xl mb-6">I'm here to help you find home with the same care and dedication I bring to my own family.</p>
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                        Let's Connect Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings Section -->
+    <section class="py-16 px-4 bg-gray-50" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Featured Listings</h2>
+        <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Cozy Family Home in Houma" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Cozy Family Home</h3>
+                    <p class="text-sm text-gray-600 mb-2">3 bed, 2 bath – Houma, LA</p>
+                    <p class="text-lg font-bold text-blue-600">$285,000</p>
+                    <div class="text-xs text-gray-500 mt-2">Gulf Coast Real Estate</div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Modern Downtown Condo" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Modern Downtown Condo</h3>
+                    <p class="text-sm text-gray-600 mb-2">2 bed, 2 bath – Houma, LA</p>
+                    <p class="text-lg font-bold text-blue-600">$195,000</p>
+                    <div class="text-xs text-gray-500 mt-2">Gulf Coast Real Estate</div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Spacious Country Home" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Spacious Country Home</h3>
+                    <p class="text-sm text-gray-600 mb-2">4 bed, 3 bath – Houma, LA</p>
+                    <p class="text-lg font-bold text-blue-600">$425,000</p>
+                    <div class="text-xs text-gray-500 mt-2">Gulf Coast Real Estate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Real Customer Photos -->
+    <section class="py-16 px-4 bg-white" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">What Clients Say</h2>
+        <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            
+            <!-- Testimonial 1 with Real Customer Photo -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6 text-center" data-aos="fade-right">
+                <img src="Lizzies Pics customers/508560350_4188736428116797_7644478649548763517_n.jpg" 
+                     alt="Happy Customer with Lizzie" 
+                     class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                <p class="text-gray-800 italic mb-4">
+                    "Lizzie made our home buying experience wonderful and stress-free. She was always available 
+                    to answer our questions and really listened to what we were looking for. We found our dream home 
+                    thanks to her expertise and dedication!"
+                </p>
+                <p class="text-sm font-semibold text-gray-800">– The Johnson Family</p>
+            </div>
+            
+            <!-- Testimonial 2 with Real Customer Photo -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6 text-center" data-aos="fade-up">
+                <img src="Lizzies Pics customers/512259731_4196508774006229_4947673752702040629_n.jpg" 
+                     alt="Another Happy Customer" 
+                     class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                <p class="text-gray-800 italic mb-4">
+                    "She was patient, knowledgeable, and truly cared about finding us the perfect home. Lizzie 
+                    knows Houma inside and out, and her local expertise was invaluable. We couldn't have asked 
+                    for a better realtor!"
+                </p>
+                <p class="text-sm font-semibold text-gray-800">– The Rodriguez Family</p>
+            </div>
+            
+            <!-- Testimonial 3 with Additional Customer Photo -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-6 text-center md:col-span-2 lg:col-span-1" data-aos="fade-left">
+                <img src="Lizzies Pics customers/IMG_7976.jpeg" 
+                     alt="Happy Customers at Closing with AMO Title Services" 
+                     class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                <p class="text-gray-800 italic mb-4">
+                    "Lizzie helped us sell our home quickly and for a great price. Her marketing strategy was 
+                    spot-on, and she guided us through every step of the process. Professional, friendly, and 
+                    results-driven – exactly what you want in a realtor."
+                </p>
+                <p class="text-sm font-semibold text-gray-800">– The Williams Family</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4 bg-blue-50" id="contact" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get in Touch</h2>
+        <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+            <!-- Contact Information -->
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-600 text-white p-3 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Office Location</h3>
+                        <p class="text-gray-600">420 Corporate Drive<br>Houma, LA 70360</p>
+                        <p class="text-xs text-gray-500 mt-1">Gulf Coast Real Estate</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-600 text-white p-3 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Cell Phone</h3>
+                        <p class="text-gray-600"><a href="tel:985-860-3666" class="hover:text-blue-600">(985) 860-3666</a></p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-600 text-white p-3 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Office Phone</h3>
+                        <p class="text-gray-600"><a href="tel:985-239-5374" class="hover:text-blue-600">(985) 239-5374</a></p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-600 text-white p-3 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Email</h3>
+                        <p class="text-gray-600"><a href="mailto:Lizzie@gulfcoast-res.com" class="hover:text-blue-600">Lizzie@gulfcoast-res.com</a></p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-600 text-white p-3 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Team Website</h3>
+                        <p class="text-gray-600"><a href="https://lizzie.gulfcoast.homes/" target="_blank" class="hover:text-blue-600">lizzie.gulfcoast.homes</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <form class="space-y-4" id="contactForm">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" name="name" required 
+                           class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="Your Name">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" name="email" required
+                           class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="you@example.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                    <input type="tel" name="phone"
+                           class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="(985) 555-0123">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea name="message" required 
+                              class="w-full border border-gray-300 rounded-md p-2 h-32 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                              placeholder="How can Lizzie help you with your real estate needs?"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-blue-700 transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Legal Compliance Footer -->
+    <section class="py-8 px-4 bg-gray-100 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-4">
+                <img src="Picture/486147761_1875439709872005_4873405390758535286_n.jpg" 
+                     alt="Gulf Coast Real Estate Logo" 
+                     class="h-16 mx-auto mb-2 object-contain">
+            </div>
+            <p class="text-sm text-gray-600 mb-2">
+                <strong>Lizzie Buras, REALTOR®</strong><br>
+                Gulf Coast Real Estate | Team Leader: Cade Harris<br>
+                Licensed in the State of Louisiana, USA
+            </p>
+            <p class="text-xs text-gray-500">
+                This information is required on all marketing materials per Louisiana Real Estate Commission regulations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-100 p-6 text-center text-sm">
+        <p class="mb-2">
+            Cell: <a href="tel:985-860-3666" class="underline hover:text-blue-400">(985) 860-3666</a> | 
+            Office: <a href="tel:985-239-5374" class="underline hover:text-blue-400">(985) 239-5374</a> | 
+            <a href="mailto:Lizzie@gulfcoast-res.com" class="underline hover:text-blue-400">Lizzie@gulfcoast-res.com</a>
+        </p>
+        <p class="mb-2">
+            <a href="https://lizzie.gulfcoast.homes/" target="_blank" class="hover:text-blue-400">Team Website</a> | 
+            Follow on 
+            <a href="#" class="hover:text-blue-400">Facebook</a> | 
+            <a href="#" class="hover:text-blue-400">Instagram</a>
+        </p>
+        <p class="text-gray-400">© 2025 Lizzie Buras, REALTOR® | Gulf Coast Real Estate. Licensed in Louisiana.</p>
+    </footer>
+
+    <!-- AOS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html> 

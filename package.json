@@ -1,0 +1,32 @@
+{
+  "name": "lizzie-buras-realtor",
+  "version": "1.0.0",
+  "description": "Professional real estate website for Lizzie Buras, REALTOR® with Gulf Coast Real Estate in Houma, Louisiana",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "real-estate",
+    "realtor",
+    "houma",
+    "louisiana",
+    "gulf-coast",
+    "website"
+  ],
+  "author": "Lizzie Buras",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/udonthavemotion/lizzieburas.git"
+  },
+  "homepage": "https://lizzieburas.vercel.app",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+} 

@@ -392,6 +392,160 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Load featured listings on homepage
+    loadFeaturedListings();
+
     console.log('🏠 Elizabeth Buras Real Estate website loaded successfully!');
     console.log('🎬 Video hero section with customer photos implemented!');
-}); 
+});
+
+// Featured Listings functionality for homepage
+async function loadFeaturedListings() {
+    const featuredListingsContainer = document.getElementById('featuredListings');
+    
+    if (!featuredListingsContainer) return;
+    
+    try {
+        // Get the same mock data as listings page (first 3 properties)
+        const properties = await getFeaturedProperties();
+        
+        properties.forEach((property, index) => {
+            const delay = (index + 1) * 100;
+            const propertyCard = createFeaturedPropertyCard(property, delay);
+            featuredListingsContainer.appendChild(propertyCard);
+        });
+        
+        // Initialize AOS for the newly created elements
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    } catch (error) {
+        console.error('Error loading featured listings:', error);
+        featuredListingsContainer.innerHTML = `
+            <div class="col-span-full text-center py-8">
+                <p class="text-gray-600">Featured listings will be available soon.</p>
+                <a href="listings.html" class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors duration-200">
+                    View All Listings
+                </a>
+            </div>
+        `;
+    }
+}
+
+// Create featured property card for homepage
+function createFeaturedPropertyCard(property, delay = 0) {
+    const div = document.createElement('div');
+    div.className = 'bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition-shadow duration-300';
+    div.setAttribute('data-aos', 'fade-up');
+    div.setAttribute('data-aos-delay', delay.toString());
+
+    // Format price
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+    }).format(property.listPrice);
+
+    div.innerHTML = `
+        <div class="relative">
+            <img src="${property.photos[0]}" 
+                 alt="${property.title}" 
+                 class="w-full h-48 object-cover"
+                 onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+            <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                ${property.status}
+            </div>
+        </div>
+        <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">${property.title}</h3>
+            <div class="flex items-center space-x-4 mb-2 text-sm text-gray-600">
+                <span>${property.bedrooms} bed</span>
+                <span>${property.bathrooms} bath</span>
+                <span>${property.sqft.toLocaleString()} sqft</span>
+            </div>
+            <p class="text-sm text-gray-600 mb-2">${property.city}, ${property.state}</p>
+            <p class="text-lg font-bold text-blue-600">${formattedPrice}</p>
+            <div class="flex space-x-2 mt-3">
+                <button onclick="contactAboutProperty('${property.id}')" 
+                        class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded text-sm transition-colors duration-200">
+                    Contact Agent
+                </button>
+                <a href="listings.html" 
+                   class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-3 rounded text-sm transition-colors duration-200 text-center">
+                    View Details
+                </a>
+            </div>
+            <div class="text-xs text-gray-500 mt-2 text-center">
+                Listed by Gulf Coast Real Estate
+            </div>
+        </div>
+    `;
+
+    return div;
+}
+
+// Mock data for featured listings (first 3 properties)
+async function getFeaturedProperties() {
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    return [
+        {
+            id: 'prop-001',
+            title: 'Beautiful Family Home in Houma',
+            listPrice: 285000,
+            address: '123 Oak Street',
+            city: 'Houma',
+            state: 'LA',
+            zipCode: '70360',
+            bedrooms: 3,
+            bathrooms: 2,
+            sqft: 1850,
+            propertyType: 'single-family',
+            status: 'Active',
+            description: 'Charming single-family home in a quiet neighborhood. Features updated kitchen, spacious living areas, and a beautiful backyard perfect for families.',
+            photos: [
+                'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ]
+        },
+        {
+            id: 'prop-002',
+            title: 'Modern Downtown Condo',
+            listPrice: 195000,
+            address: '456 Main Street',
+            city: 'Houma',
+            state: 'LA',
+            zipCode: '70360',
+            bedrooms: 2,
+            bathrooms: 2,
+            sqft: 1200,
+            propertyType: 'condo',
+            status: 'Active',
+            description: 'Contemporary condo in the heart of downtown Houma. Walk to restaurants, shops, and entertainment. Perfect for young professionals.',
+            photos: [
+                'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ]
+        },
+        {
+            id: 'prop-003',
+            title: 'Spacious Country Home',
+            listPrice: 425000,
+            address: '789 Country Lane',
+            city: 'Houma',
+            state: 'LA',
+            zipCode: '70363',
+            bedrooms: 4,
+            bathrooms: 3,
+            sqft: 2800,
+            propertyType: 'single-family',
+            status: 'Active',
+            description: 'Stunning country home on a large lot with mature trees. Features an open floor plan, gourmet kitchen, and master suite with walk-in closet.',
+            photos: [
+                'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            ]
+        }
+    ];
+} 

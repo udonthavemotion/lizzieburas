@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings - Lizzie Buras, REALTOR® | Gulf Coast Real Estate</title>
+    <meta name="description" content="Browse available properties in Houma, Louisiana and surrounding areas. Find your dream home with Lizzie Buras, REALTOR® at Gulf Coast Real Estate.">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="shortcut icon" href="icon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Lizzie Buras",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "420 Corporate Drive",
+            "addressLocality": "Houma",
+            "addressRegion": "LA",
+            "postalCode": "70360",
+            "addressCountry": "US"
+        },
+        "telephone": "(985) 580-6880",
+        "url": "https://lizzieburas.vercel.app",
+        "sameAs": [
+            "https://www.facebook.com/LizzieBurasRealtor"
+        ]
+    }
+    </script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBeige: '#F5F5DC',
+                        brandBlue: '#6BA6D9',
+                        gulfCoastBlue: '#2B5A87'
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-4 bg-white/95 backdrop-blur-sm shadow fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <!-- Brand/name with proper attribution -->
+        <div class="flex items-center space-x-3">
+            <div>
+                <a href="index.html" class="text-xl font-bold text-gray-800">Lizzie Buras</a>
+                <div class="text-xs text-gray-600">Gulf Coast Real Estate</div>
+            </div>
+        </div>
+        
+        <!-- Menu (hidden on mobile) -->
+        <ul class="hidden sm:flex space-x-6 text-gray-800">
+            <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="listings.html" class="text-blue-600 font-semibold">Listings</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600 transition">Blog</a></li>
+            <li><a href="index.html#contact" class="hover:text-blue-600 transition">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile menu button -->
+        <button class="sm:hidden p-2" id="menuToggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        
+        <!-- Mobile menu (hidden by default) -->
+        <div class="hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg sm:hidden" id="mobileMenu">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="index.html" class="block hover:text-blue-600 transition">Home</a></li>
+                <li><a href="listings.html" class="block text-blue-600 font-semibold">Listings</a></li>
+                <li><a href="blog.html" class="block hover:text-blue-600 transition">Blog</a></li>
+                <li><a href="index.html#contact" class="block hover:text-blue-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Property Listings</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Discover your dream home in Houma, Louisiana and surrounding areas. 
+                Browse our current listings and let me help you find the perfect property.
+            </p>
+        </div>
+    </section>
+
+    <!-- Live Zillow Listings -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Live Listings in Houma, LA</h2>
+            <div class="w-full bg-white rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                    src="https://www.zillow.com/houma-la/" 
+                    width="100%" 
+                    height="800" 
+                    style="border: none; display: block;"
+                    loading="lazy"
+                    title="Live Property Listings in Houma, Louisiana"
+                    class="w-full min-h-[800px] md:min-h-[600px] lg:min-h-[800px]">
+                </iframe>
+            </div>
+            <div class="text-center mt-6">
+                <p class="text-gray-600 text-sm">
+                    Browse current listings directly from Zillow. For personalized assistance with any property, contact me below.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Find Your Dream Home?</h2>
+            <p class="text-xl mb-8">
+                Let me help you navigate the home buying process with personalized service and local expertise.
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+                <a href="index.html#contact" class="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                    Contact Me Today
+                </a>
+                <a href="tel:+19855806880" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
+                    Call (985) 580-6880
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold">Lizzie Buras, REALTOR®</h3>
+                <p class="text-gray-400">Gulf Coast Real Estate | Licensed in Louisiana</p>
+            </div>
+            <div class="text-sm text-gray-400">
+                <p>&copy; 2024 Lizzie Buras. All rights reserved.</p>
+                <p class="mt-2">Equal Housing Opportunity</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html> 
